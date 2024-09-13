@@ -49,7 +49,7 @@ function Login() {
     } catch (err) {
       console.log(err.message);
       toast.error(
-        "Something went wrong, possible cause: server not hosted globally for now"
+        err.message
       );
     } finally {
       setActivityIndicator(false);
