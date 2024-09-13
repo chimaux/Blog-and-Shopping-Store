@@ -76,7 +76,7 @@ function Signup() {
     } catch (error) {
       console.log(error.message);
       toast.error(
-        "Something went wrong, possible cause: server not hosted globally for now"
+        error.message
       );
     } finally {
       setActivityIndicator(false);
