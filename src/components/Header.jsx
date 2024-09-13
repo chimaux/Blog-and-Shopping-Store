@@ -51,7 +51,7 @@ const Header = () => {
         </div>
         <div className="md:flex md:space-x-2">
           <p>
-            Hotline: <a href="tel:+2349091793058">+2349091793058</a>
+            Hotline: <a href="tel:+2349091793058">+2348123733646</a>
           </p>
           <div>English</div>
           <div>USD $</div>

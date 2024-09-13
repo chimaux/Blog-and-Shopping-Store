@@ -104,7 +104,7 @@ const Provider = ({ children }) => {
   // =========>>> STORE FUNCTIONS ENDS HERE
 
   //=========>>> BLOG STARTS FUNCTIONS HERE
-  const [signupLoginPan,setSignupLoginPan]=useState(true)
+  const [signupLoginPan,setSignupLoginPan]=useState(false)
   const [componentName, setComponentName] = useState("");
 
   const [openAndClose2, setOpenAndClose2] = useState("hidden");

@@ -10,10 +10,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { Spinner } from "react-activity";
 import "react-activity/dist/library.css";
-import STRAPI_BASEURL from "../config";
+import BASEURL from "../config";
 
 function Login() {
-  console.log(STRAPI_BASEURL, "chima203");
+  console.log(BASEURL, "chima203");
   const { setSignupLoginPan, setPage } = useContext(myGlobalContext);
   const navigate = useNavigate();
   const [activityIndicator, setActivityIndicator] = useState(false);
@@ -26,7 +26,7 @@ function Login() {
 
   const { email, password } = userInput;
   // console.log(Object.keys(userInput),"chima")
-  const loginURL = `${STRAPI_BASEURL}/api/auth/local`;
+  const loginURL = `${BASEURL}/myusers/login/`;
 
   const loginUser = async () => {
     try {
@@ -35,8 +35,8 @@ function Login() {
       setBtnDisabled(true);
 
       const res = await axios.post(loginURL, {
-        identifier: email,
-        password: password,
+        email,
+        password
       });
       console.log(res);
       setUserInput({

@@ -6,11 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { BiHomeSmile } from "react-icons/bi";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { v4 as UUID } from "uuid";
+// import { v4 as UUID } from "uuid";
 
 import { Spinner } from "react-activity";
 import "react-activity/dist/library.css";
-import STRAPI_BASEURL from "../config";
+import BASEURL from "../config";
 
 function Signup() {
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ function Signup() {
     pageName();
   });
 
-  const registerURL = `${STRAPI_BASEURL}/api/auth/local/register`;
+  const registerURL = `${BASEURL}/myusers/signup/`;
   const registerUser = async () => {
     console.log(`${firstName}, ${lastName}, ${email}, ${password}`);
     try {
@@ -58,11 +58,11 @@ function Signup() {
       setBtnColor("#1b3a559f");
       setBtnDisabled(true);
       const res = await axios.post(registerURL, {
-        username: UUID().toString() + firstName,
-        firstName: firstName,
+        // username: UUID().toString() + firstName,
+        first_name: firstName,
         email: email,
         password: password,
-        lastname: lastName,
+        last_name: lastName,
       });
       console.log(res);
       setUserInput({
